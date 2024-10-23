@@ -9,6 +9,3 @@ export interface DiaryEntry {
     comment: string;
 }
 
-interface SpecialDiaryEntry extends DiaryEntry {
-    flightNumber: number;
-}

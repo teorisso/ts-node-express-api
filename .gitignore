@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+
+# TypeScript
+*.tsbuildinfo
+dist/
+out/
+build/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+logs
+
