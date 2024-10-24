@@ -13,11 +13,21 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const newDiaryEntry = req.body;
+    try {
+        const newDiaryEntry = toNewDiaryEntry(req.body);
+        
 
-    const addedDiaryEntry = diaryServices.addDiary(newDiaryEntry);
-
-    res.json(addedDiaryEntry);
+        const addedDiaryEntry = diaryServices.addDiary(newDiaryEntry);
+    
+        res.json(addedDiaryEntry);
+        
+    } catch (error) {
+        if (error instanceof Error) {
+            res.status(400).send(error.message);
+        } else {
+            res.status(400).send('An unknown error occurred');
+        }
+    }
 });
 
 export default router;
