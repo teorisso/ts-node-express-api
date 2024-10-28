@@ -1,10 +1,11 @@
 import express from 'express';
 import * as diaryServices from '../services/diaryServices';
+import toNewDiaryEntry from '../utils';
 
 const router = express.Router();
 
 router.get('/', (_req, res) => {
-    res.send(diaryServices.getEntriesWhitoutSensitiveInfo());
+    res.send(diaryServices.getEntriesWithoutSensitiveInfo());
 });
 
 router.get('/:id', (req, res) => {

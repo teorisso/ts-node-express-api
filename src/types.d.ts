@@ -1,5 +1,6 @@
-export type Weather = 'sunny' | 'rainy' | 'cloudy' | 'windy' |'stormy';
-export type Visibility = 'great' | 'good' | 'ok' | 'poor';
+import { Weather, Visibility } from "./enums";
+import { isString, isDate, isWeather, isVisibility } from "./utils";
+
 export interface DiaryEntry {
     id: number
     date: string
